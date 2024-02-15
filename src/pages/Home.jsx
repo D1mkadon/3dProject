@@ -7,7 +7,7 @@ import {
   headContentAnimation,
   slideAnimation,
 } from "../config/motion";
-import CustomButton from "../components";
+import { CustomButton } from "../components";
 
 const Home = () => {
   const snap = useSnapshot(state);
@@ -42,6 +42,7 @@ const Home = () => {
                 type="filled"
                 title="Customize it"
                 handleClick={() => (state.intro = false)}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
               />
             </motion.div>
           </motion.div>
