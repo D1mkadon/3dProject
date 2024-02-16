@@ -5,7 +5,10 @@ const CustomButton = ({ type, title, customStyles, handleClick }) => {
   const snap = useSnapshot(state);
   const generateStyle = (type) => {
     if (type === "filled") {
-      return { background: snap.color, color: "#fff" };
+      return {
+        background: snap.color,
+        color: "#000",
+      };
     }
   };
   return (
