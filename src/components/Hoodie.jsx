@@ -63,7 +63,7 @@ export function Hoodie(props) {
               position={[0, 0, 0.5]}
               rotation={[1, 0, 0]}
               scale={0.1}
-              map={fullTexture}
+              map={logoTexture}
             />
           )}
 
@@ -72,7 +72,7 @@ export function Hoodie(props) {
               position={[0, 0, 0.5]}
               rotation={[1, 0, 0]}
               scale={0.2}
-              map={logoTexture}
+              map={fullTexture}
               depthTest={false}
               depthWrite={true}
             />

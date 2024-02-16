@@ -9,7 +9,7 @@ import { reader, downloadCanvasToImage } from "../config/helpers";
 import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
 import { fadeAnimation, slideAnimation } from "../config/motion";
 import Tab from "../components/Tab";
-import { AIPicker, ColorPicker, CustomButton, FilePicker } from "../components";
+import { ColorPicker, CustomButton, FilePicker } from "../components";
 
 const Customizer = () => {
   const snap = useSnapshot(state);
@@ -27,8 +27,7 @@ const Customizer = () => {
         return <ColorPicker />;
       case "filepicker":
         return <FilePicker file={file} setFile={setFile} readFile={readFile} />;
-      case "aipicker":
-        return <AIPicker />;
+
       default:
         return null;
     }
@@ -46,13 +45,12 @@ const Customizer = () => {
       case "logoShirt":
         state.isLogoTexture = !activeFilterTab[tabName];
         break;
-      case "stylishShirt":
-        state.isFullTexture = !activeFilterTab[tabName];
-        break;
       default:
-        state.isFullTexture = true;
-        state.isLogoTexture = false;
+        state.isLogoTexture = true;
     }
+    setActiveFilterTab((prevState) => {
+      return { ...prevState, [tabName]: !prevState[tabName] };
+    });
   };
   const readFile = (type) => {
     reader(file).then((result) => {
@@ -104,9 +102,9 @@ const Customizer = () => {
               <Tab
                 key={tab.name}
                 tab={tab}
-                handleClick={() => {}}
+                handleClick={() => handleActiveFilterTab(tab.name)}
                 isFilterTab
-                isActiveTab=""
+                isActiveTab={activeFilterTab[tab.name]}
               ></Tab>
             ))}
           </motion.div>

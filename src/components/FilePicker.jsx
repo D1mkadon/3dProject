@@ -2,7 +2,7 @@ import CustomButton from "./CustomButton";
 const FilePicker = ({ file, setFile, readFile }) => {
   return (
     <div className="filepicker-container">
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col items-center">
         <input
           type="file"
           id="file-upload"
@@ -16,7 +16,14 @@ const FilePicker = ({ file, setFile, readFile }) => {
           {file === "" ? "No file selected" : file.name}{" "}
         </p>
       </div>
-      <div className="mt-4 flex gap-3 flex-wrap"></div>
+      <div className="mt-4 flex gap-3 flex-wrap">
+        <CustomButton
+          type={"filled"}
+          title={"Logo"}
+          handleClick={() => readFile("full")}
+          customStyles={"text-xs"}
+        />
+      </div>
     </div>
   );
 };
