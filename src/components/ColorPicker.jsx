@@ -9,7 +9,7 @@ const ColorPicker = () => {
       <SketchPicker
         color={snap.color}
         disableAlpha
-        onChange={(color) => (state.color = color.hex)}
+        onChangeComplete={(color) => (state.color = color.hex)}
         presetColors={[
           "#010101",
           "#fff",
@@ -29,7 +29,7 @@ const ColorPicker = () => {
       <SketchPicker
         color={snap.colorSecond}
         disableAlpha
-        onChange={(color) => (state.colorSecond = color.hex)}
+        onChangeComplete={(color) => (state.colorSecond = color.hex)}
       />
     </div>
   );
