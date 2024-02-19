@@ -11,7 +11,7 @@ import { CustomButton } from "../components";
 
 const Home = () => {
   const snap = useSnapshot(state);
-  state;
+
   return (
     <AnimatePresence>
       {snap.intro && (
@@ -35,7 +35,7 @@ const Home = () => {
             >
               <p className="max-w-md font-normal text-gray-600 text-base">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                voluptates perferendis <strong>eaque quisquam enim</strong> quia
+                voluptates perferendis <strong>Create your design</strong> quia
                 corporis doloribus repellat sint sequi.
               </p>
               <CustomButton
